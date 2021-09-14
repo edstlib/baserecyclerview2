@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BaseRecylerView2</string>
+    <string name="this_is_header">This is Header</string>
+</resources>
