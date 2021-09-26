@@ -44,7 +44,7 @@ class ImageHolder(private val binding: AdapterImageBinding): BaseViewHolder<Phot
 }
 ```
 
-Create your adapter extend to BaseRecyclerView2, adn implement the abstrach method. And you can define listener implentation for every holder. An example is shown below.
+Create your adapter extend to BaseRecyclerView2, and implement the abstrach method. And you can define listener implentation for every holder. An example is shown below.
 
 ```kotlin
 class TestAdapter: BaseRecyclerView2() {
