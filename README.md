@@ -1,4 +1,3 @@
-# baserecyclerview2
 # BaseRecyclerView2
 
 ## Setup
