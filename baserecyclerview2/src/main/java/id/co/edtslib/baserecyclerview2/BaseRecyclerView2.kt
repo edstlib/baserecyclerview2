@@ -7,7 +7,6 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseRecyclerView2: RecyclerView.Adapter<BaseViewHolder<*>>() {
     val list = mutableListOf<AdapterData>()
-    var delegate: BaseRecyclerView2AdapterDelegate? = null
 
     abstract fun createHolder(inflater: LayoutInflater, parent: ViewGroup, viewType: Int): BaseViewHolder<*>
 
@@ -17,7 +16,7 @@ abstract class BaseRecyclerView2: RecyclerView.Adapter<BaseViewHolder<*>>() {
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
-        holder.process(list, position,delegate)
+        holder.process(list, position)
     }
 
     override fun getItemCount() = list.size

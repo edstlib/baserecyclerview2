@@ -2,7 +2,9 @@ package id.co.edtslib.baserecylerview2
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.viewbinding.ViewBinding
 import id.co.edtslib.baserecyclerview2.BaseRecyclerView2
+import id.co.edtslib.baserecyclerview2.BaseRecyclerView2AdapterDelegate
 import id.co.edtslib.baserecyclerview2.BaseViewHolder
 import id.co.edtslib.baserecylerview2.databinding.AdapterHeaderBinding
 import id.co.edtslib.baserecylerview2.databinding.AdapterImageBinding
@@ -21,7 +23,16 @@ class TestAdapter: BaseRecyclerView2() {
             }
             MyAdapterType.Image.ordinal -> {
                 val binding = AdapterImageBinding.inflate(inflater, parent, false)
-                ImageHolder(binding)
+                val holder = ImageHolder(binding)
+                holder.delegate = object : BaseRecyclerView2AdapterDelegate<PhotoData> {
+                    override fun onClick(t: PhotoData?, position: Int, viewBinding: ViewBinding) {
+                    }
+
+                    override fun onDraw(t: PhotoData?, position: Int, viewBinding: ViewBinding) {
+                    }
+                }
+
+                holder
             }
             else -> {
 

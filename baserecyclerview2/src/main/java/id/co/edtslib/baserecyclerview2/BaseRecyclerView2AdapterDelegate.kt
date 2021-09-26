@@ -1,6 +1,8 @@
 package id.co.edtslib.baserecyclerview2
 
-interface BaseRecyclerView2AdapterDelegate {
-    fun onClick(t: AdapterData, position: Int, holder: BaseViewHolder<*>?)
-    fun onDraw(t: AdapterData, position: Int)
+import androidx.viewbinding.ViewBinding
+
+interface BaseRecyclerView2AdapterDelegate<T> {
+    fun onClick(t: T?, position: Int, viewBinding: ViewBinding)
+    fun onDraw(t: T?, position: Int, viewBinding: ViewBinding)
 }

@@ -6,7 +6,7 @@ import id.co.edtslib.baserecyclerview2.BaseViewHolder
 import id.co.edtslib.baserecylerview2.databinding.AdapterImageBinding
 
 class ImageHolder(private val binding: AdapterImageBinding): BaseViewHolder<PhotoData>(binding) {
-    override fun setData(t: PhotoData?, delegate: BaseRecyclerView2AdapterDelegate?) {
+    override fun setData(t: PhotoData?) {
         Glide.with(itemView.context).load(t?.url).into(binding.imageView)
         binding.textView.text = t?.caption
     }
