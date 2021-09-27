@@ -21,4 +21,26 @@ abstract class BaseRecyclerView2: RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     override fun getItemCount() = list.size
     override fun getItemViewType(position: Int) = list[position].rowType
+
+    fun getItemCount(viewType: Int): Int {
+        var count = 0
+        for (item in list) {
+            if (item.rowType == viewType) {
+                count++
+            }
+        }
+
+        return count
+    }
+
+    inline fun <reified T: Any> getList(viewType: Int): List<T> {
+        val l = mutableListOf<T>()
+        for (item in list) {
+            if (item.rowType == viewType && item.data is T) {
+                l.add(item.data)
+            }
+        }
+
+        return l
+    }
 }

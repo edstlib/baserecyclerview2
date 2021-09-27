@@ -17,11 +17,11 @@ class TestAdapter: BaseRecyclerView2() {
         viewType: Int
     ): BaseViewHolder<*> {
         return when(viewType) {
-            MyAdapterType.Item.ordinal -> {
+            MyAdapterType.ItemText.ordinal -> {
                 val binding = AdapterItemBinding.inflate(inflater, parent, false)
                 TextHolder(binding)
             }
-            MyAdapterType.Image.ordinal -> {
+            MyAdapterType.ItemImage.ordinal -> {
                 val binding = AdapterImageBinding.inflate(inflater, parent, false)
                 val holder = ImageHolder(binding)
                 holder.delegate = object : BaseRecyclerView2AdapterDelegate<PhotoData> {
