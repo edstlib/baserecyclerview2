@@ -90,4 +90,15 @@ dependencies {
         }
 
 ```
+```kotlin
+    fun getPhotoCount(): Int {
+        var total = 0
+        for (item in list) {
+            if (item.rowType == MyAdapterType.ItemImage.ordinal) {
+                total++
+            }
+        }
 
+        return total
+    }
+```
